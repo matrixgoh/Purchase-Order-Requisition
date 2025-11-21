@@ -70,8 +70,16 @@ const App: React.FC = () => {
       alert("Please fill in vendor code and at least one line item.");
       return;
     }
-    // Initial submission moves to Team Leader
-    const updated = { ...formData, status: 'Pending Team Leader' as RequisitionStatus };
+    // Initial submission moves to Team Leader and records requestor information
+    const currentDate = new Date().toISOString().split('T')[0];
+    const updated = { 
+      ...formData, 
+      status: 'Pending Team Leader' as RequisitionStatus,
+      approvalRequestor: {
+        name: formData.requestorName || 'Current User',
+        date: currentDate
+      }
+    };
     saveRequisition(updated);
     refreshData();
     setView('dashboard');
