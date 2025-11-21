@@ -1,3 +1,4 @@
+
 import React from 'react';
 
 const Header: React.FC = () => {
@@ -19,14 +20,15 @@ const Header: React.FC = () => {
       <div className="flex flex-col items-end">
         {/* Company Logo */}
         <div className="flex items-center gap-3 mb-4">
-             <svg viewBox="0 0 100 100" className="h-10 w-auto text-brand-accent fill-current">
-                <path d="M50 10 L90 30 L90 70 L50 90 L10 70 L10 30 Z" fill="none" stroke="currentColor" strokeWidth="6" />
-                <path d="M50 25 L75 37.5 L75 62.5 L50 75 L25 62.5 L25 37.5 Z" fill="currentColor" opacity="0.8" />
-                <circle cx="50" cy="50" r="8" fill="white" />
+             {/* Explicit fills used for html2canvas compatibility */}
+             <svg viewBox="0 0 100 100" className="h-10 w-auto" style={{ fill: '#3b82f6', color: '#3b82f6' }}>
+                <path d="M50 10 L90 30 L90 70 L50 90 L10 70 L10 30 Z" fill="none" stroke="#3b82f6" strokeWidth="6" />
+                <path d="M50 25 L75 37.5 L75 62.5 L50 75 L25 62.5 L25 37.5 Z" fill="#3b82f6" opacity="0.8" />
+                <circle cx="50" cy="50" r="8" fill="#ffffff" />
             </svg>
             <div className="flex flex-col">
-                <span className="text-brand-primary font-bold text-2xl tracking-tight leading-none">QUANTUM</span>
-                <span className="text-brand-accent font-semibold text-[0.6rem] tracking-[0.2em] uppercase">Global Solutions</span>
+                <span className="text-brand-primary font-bold text-2xl tracking-tight leading-none" style={{ color: '#0f172a' }}>QUANTUM</span>
+                <span className="text-brand-accent font-semibold text-[0.6rem] tracking-[0.2em] uppercase" style={{ color: '#3b82f6' }}>Global Solutions</span>
             </div>
         </div>
         
@@ -36,7 +38,7 @@ const Header: React.FC = () => {
             </h2>
             <div className="flex justify-end gap-4 text-xs font-bold mt-1">
                 <span className="text-gray-800">DOC-PUR-REQ-01</span>
-                <span className="text-brand-accent">Rev 3.0</span>
+                <span className="text-brand-accent" style={{ color: '#3b82f6' }}>Rev 3.0</span>
             </div>
         </div>
       </div>

@@ -1,3 +1,4 @@
+
 export interface LineItem {
   id: string;
   description: string;
@@ -10,7 +11,14 @@ export interface ApprovalInfo {
   date: string; // YYYY-MM-DD
 }
 
+export type RequisitionStatus = 'Draft' | 'Pending Team Leader' | 'Pending Director' | 'Approved' | 'Rejected';
+export type UserRole = 'Requestor' | 'Team Leader' | 'Director';
+
 export interface FormData {
+  id: string; // Unique ID
+  status: RequisitionStatus;
+  createdAt: string;
+
   // Header/Tracking
   deptTrackingNo: string;
   date: string;
@@ -37,6 +45,9 @@ export interface FormData {
 }
 
 export const INITIAL_FORM_DATA: FormData = {
+  id: '',
+  status: 'Draft',
+  createdAt: '',
   deptTrackingNo: '',
   date: new Date().toISOString().split('T')[0],
   branch: '',
