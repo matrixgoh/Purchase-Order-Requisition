@@ -15,6 +15,7 @@ A modern, intelligent purchase order requisition management system built with Re
 - **Real-Time Status Updates**: Live tracking of requisition progress through the approval chain
 - **PDF Export**: Generate professional PDF documents of requisitions
 - **Print Support**: Print-optimized layouts for physical documentation
+- **Offline Support**: Works completely offline - all dependencies bundled locally, no internet required (except for AI features)
 
 ### 🤖 AI-Powered Features
 - **Gemini AI Integration**: Auto-fill requisition forms using natural language descriptions
@@ -34,11 +35,12 @@ A modern, intelligent purchase order requisition management system built with Re
 ### Tech Stack
 - **Frontend Framework**: React 19.2.0
 - **Language**: TypeScript 5.8.2
-- **Styling**: Tailwind CSS (CDN)
+- **Styling**: Tailwind CSS 4.0 (locally installed)
 - **Icons**: Lucide React
 - **AI Integration**: Google Gemini API (@google/genai)
 - **Build Tool**: Vite 6.2.0
-- **PDF Generation**: html2pdf.js
+- **PDF Generation**: html2pdf.js (locally installed)
+- **Offline Support**: All dependencies installed via npm, no CDN required
 
 ### Project Structure
 ```

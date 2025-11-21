@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  }
+}
+
+/* PDF Generation specific styles */
+.pdf-container {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  width: 210mm;
+}
+
+.pdf-page {
+  width: 210mm;
+  height: 296mm; /* Slightly less than 297 to prevent overflow creating blank pages */
+  padding: 10mm 10mm 15mm 10mm; /* Top, Right, Bottom, Left - Increased Bottom padding */
+  background: white;
+  position: relative;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  page-break-after: always;
+}
+
+.pdf-page:last-child {
+  page-break-after: avoid;
+}
+
+/* Precise borders for PDF */
+.border-black-strong {
+  border-color: #000000 !important;
+  border-width: 1px !important;
+}
+
+.border-t-black-strong { border-top: 1px solid #000 !important; }
+.border-b-black-strong { border-bottom: 1px solid #000 !important; }
+.border-l-black-strong { border-left: 1px solid #000 !important; }
+.border-r-black-strong { border-right: 1px solid #000 !important; }
+
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 0;
+  }
+  
+  body {
+    background: white;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .no-print { 
+    display: none !important; 
+  }
+
+  #form-editor {
+    display: none; /* Hide interactive form in native print */
+  }
+}
