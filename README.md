@@ -35,7 +35,7 @@ A modern, intelligent purchase order requisition management system built with Re
 ### Tech Stack
 - **Frontend Framework**: React 19.2.0
 - **Language**: TypeScript 5.8.2
-- **Styling**: Tailwind CSS 4.0 (locally installed)
+- **Styling**: Tailwind CSS 3.4.17 (locally installed)
 - **Icons**: Lucide React
 - **AI Integration**: Google Gemini API (@google/genai)
 - **Build Tool**: Vite 6.2.0
